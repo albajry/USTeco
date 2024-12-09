@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FAE27A8-9CDC-4636-B051-903222870F60}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>USTeco</RootNamespace>
+    <AssemblyName>USTeco</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>USTeco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>393E8680899ACC622358D7CB852801413A4A206A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>USTeco_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\Setup\mysql-for-visualstudio-2.0.5-noinstall\v461\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>..\..\..\Setup\mysql-for-visualstudio-2.0.5-noinstall\v461\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.4.0\lib\net48\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RsiDotNetDLL, Version=2.4.0.3, Culture=neutral, PublicKeyToken=11d948a84312b819, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CSharp\Handpunch\RsiDotNetDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendReport.Designer.cs">
+      <DependentUpon>AttendReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupList.Designer.cs">
+      <DependentUpon>BackupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceInfo.Designer.cs">
+      <DependentUpon>DeviceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorized.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorized.Designer.cs">
+      <DependentUpon>Authorized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HistReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistReport.Designer.cs">
+      <DependentUpon>HistReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogReport.Designer.cs">
+      <DependentUpon>LogReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyGlobal.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SavedUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SavedUserList.Designer.cs">
+      <DependentUpon>SavedUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settengs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settengs.Designer.cs">
+      <DependentUpon>Settengs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersList.Designer.cs">
+      <DependentUpon>UsersList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AttendReport.resx">
+      <DependentUpon>AttendReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupList.resx">
+      <DependentUpon>BackupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceInfo.resx">
+      <DependentUpon>DeviceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorized.resx">
+      <DependentUpon>Authorized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistReport.resx">
+      <DependentUpon>HistReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogReport.resx">
+      <DependentUpon>LogReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SavedUserList.resx">
+      <DependentUpon>SavedUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settengs.resx">
+      <DependentUpon>Settengs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersList.resx">
+      <DependentUpon>UsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="USTeco_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reloading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discconect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setup48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sync40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sync_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\between.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newjob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\until.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adduser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\face_off_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\face_on_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\palm-off_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\palm-on_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tap_off_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tap_on_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tap_th_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zkteco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zkteco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect801.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-off1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-on1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_all.png" />
+    <None Include="Resources\database-off.png" />
+    <None Include="Resources\database-on.png" />
+    <None Include="Resources\fingerprint_all.png" />
+    <None Include="Resources\handpunch.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\chrome.png" />
+    <None Include="Resources\histRep.png" />
+    <None Include="Resources\history1.png" />
+    <None Include="Resources\admin.png" />
+    <None Include="Resources\admin1.png" />
+    <None Include="Resources\start2-icon.png" />
+    <None Include="Resources\stop_icon.png" />
+    <None Include="Resources\disconnect401.png" />
+    <None Include="Resources\diconnect80.png" />
+    <None Include="Resources\connect802.png" />
+    <Content Include="USTeco.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="zkemkeeper">
+      <Guid>{FE9DED34-E159-408E-8490-B720A5E632C7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
